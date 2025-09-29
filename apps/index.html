@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Application Virtual Desktops with browsers and mail/news programs." />
+  <link rel="icon" href="../favicon.png">
+  <title>Application Desktops | VirtualDesktop.org</title>
+  <style>
+    :root {
+      --primary-color: #2b6cb0;
+      --background-color: #008080;
+      --text-color: #f0f8f8;
+      --card-bg: #ffffff;
+      --font-main: 'Segoe UI', Roboto, Arial, sans-serif;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --image-border: 2px solid #888;
+      --bubble-bg: rgba(255, 255, 255, 0.3);
+      --bubble-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: var(--font-main);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      background-color: var(--bubble-bg);
+      border-radius: 1.5rem;
+      padding: 0.5rem 2rem;
+      box-shadow: var(--bubble-shadow);
+      display: inline-block;
+      backdrop-filter: blur(6px);
+    }
+    p.description {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      margin: 3rem 0 1rem;
+      color: var(--primary-color);
+      background-color: var(--bubble-bg);
+      border-radius: 1rem;
+      padding: 0.25rem 1rem;
+      display: inline-block;
+      box-shadow: var(--bubble-shadow);
+      backdrop-filter: blur(6px);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      color: #333;
+      user-select: none;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ddd;
+      border: var(--image-border);
+      background-color: white;
+    }
+    .card-title {
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 0;
+      background-color: #004d4d;
+      color: white;
+      font-size: 0.9rem;
+      text-align: center;
+      box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <script>
+    function openDesktop(url) {
+      const width = 800;
+      const height = 600;
+      const left = (screen.width - width) / 2;
+      const top = (screen.height - height) / 2;
+      const settings = `width=${width},height=${height},top=${top},left=${left},scrollbars=no,location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=no`;
+      window.open(url, '_blank', settings);
+    }
+  </script>
+</head>
+<body>
+  <h1>Application Desktops</h1>
+  <button onclick="history.back()" style="
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #004d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+">
+  ← Go Back
+</button>
+
+  <p class="description">
+    Application desktops are standalone desktops of various browsers and mail/news programs. Here are the application virtual desktops that are currently available:
+  </p>
+  <div class="section-title">Microsoft</div>
+  <div class="grid">
+    <div class="card" onclick="openDesktop('ie3/index.html')"><img src="ie3.png" alt="IE3"><div class="card-title">Internet Explorer 3</div></div>
+    <div class="card" onclick="openDesktop('ie4/index.html')"><img src="ie4.png" alt="IE4"><div class="card-title">Internet Explorer 4</div></div>
+    <div class="card" onclick="openDesktop('ie5/index.html')"><img src="ie5.png" alt="IE5"><div class="card-title">Internet Explorer 5</div></div>
+    <div class="card" onclick="openDesktop('ie55/index.html')"><img src="ie55.png" alt="IE5.5"><div class="card-title">Internet Explorer 5.5</div></div>
+    <div class="card" onclick="openDesktop('ie6/index.html')"><img src="ie6.png" alt="IE6"><div class="card-title">Internet Explorer 6</div></div>
+    <div class="card" onclick="openDesktop('ie6sp2/index.html')"><img src="ie6sp2.png" alt="IE6 SP2"><div class="card-title">Internet Explorer 6 SP2</div></div>
+    <div class="card" onclick="openDesktop('ie7/index.html')"><img src="ie7.png" alt="IE7"><div class="card-title">Internet Explorer 7</div></div>
+    <div class="card" onclick="openDesktop('ie45m/index.html')"><img src="ie45m.png" alt="IE 4.5 Mac"><div class="card-title">Internet Explorer 4.5 Mac</div></div>
+    <div class="card" onclick="openDesktop('ie5m/index.html')"><img src="ie5m.png" alt="IE 5 Mac"><div class="card-title">Internet Explorer 5 Mac</div></div>
+    <div class="card" onclick="openDesktop('ie52m/index.html')"><img src="ie52m.png" alt="IE 5.2 Mac"><div class="card-title">Internet Explorer 5.2 Mac (OS X)</div></div>
+    <div class="card" onclick="openDesktop('imn/indexmail.html')"><img src="imail.png" alt="Internet Mail"><div class="card-title">Internet Mail</div></div>
+    <div class="card" onclick="openDesktop('imn/indexnews.html')"><img src="inews.png" alt="Internet News"><div class="card-title">Internet News</div></div>
+    <div class="card" onclick="openDesktop('olx4/index.html')"><img src="olx4.png" alt="OE4"><div class="card-title">Outlook Express 4</div></div>
+    <div class="card" onclick="openDesktop('olx5/index.html')"><img src="olx5.png" alt="OE5"><div class="card-title">Outlook Express 5</div></div>
+    <div class="card" onclick="openDesktop('olx6/index.html')"><img src="olx6.png" alt="OE6"><div class="card-title">Outlook Express 6</div></div>
+    <div class="card" onclick="openDesktop('olx45m/index.html')"><img src="olx45m.png" alt="OE 4.5 Mac"><div class="card-title">Outlook Express 4.5 Mac</div></div>
+    <div class="card" onclick="openDesktop('olx5m/index.html')"><img src="olx5m.png" alt="OE 5 Mac"><div class="card-title">Outlook Express 5 Mac</div></div>
+    <div class="card" onclick="openDesktop('ol97/index.html')"><img src="ol97.png" alt="Outlook 97"><div class="card-title">Outlook 97</div></div>
+  </div>
+  <div class="section-title">Other</div>
+  <div class="grid">
+    <div class="card" onclick="openDesktop('ns4/index.html')"><img src="ns4.png" alt="Netscape 4"><div class="card-title">Netscape 4</div></div>
+    <div class="card" onclick="openDesktop('ns6/index.html')"><img src="ns6.png" alt="Netscape 6"><div class="card-title">Netscape 6</div></div>
+    <div class="card" onclick="openDesktop('ns7/index.html')"><img src="ns7.png" alt="Netscape 7"><div class="card-title">Netscape 7</div></div>
+    <div class="card" onclick="openDesktop('tb15/index.html')"><img src="tb15.png" alt="Thunderbird"><div class="card-title">Thunderbird</div></div>
+    <div class="card" onclick="openDesktop('ff15/index.html')"><img src="ff15.png" alt="Firefox 1.5"><div class="card-title">Firefox 1.5</div></div>
+    <div class="card" onclick="openDesktop('saf2/index.html')"><img src="saf2.png" alt="Safari 2"><div class="card-title">Safari 2 (Mac OS X)</div></div>
+  </div>
+  <div class="section-title">Additional Apps</div>
+  <div class="grid">
+    <div class="card" onclick="openDesktop('ol98/index.html')"><img src="ol98.png" alt="Outlook 98"><div class="card-title">Outlook 98</div></div>
+    <div class="card" onclick="openDesktop('ol2k/index.html')"><img src="ol2k.png" alt="Outlook 2000"><div class="card-title">Outlook 2000</div></div>
+    <div class="card" onclick="openDesktop('olxp/index.html')"><img src="olxp.png" alt="Outlook XP"><div class="card-title">Outlook XP (2002)</div></div>
+    <div class="card" onclick="openDesktop('ol2k3/index.html')"><img src="ol2k3.png" alt="Outlook 2003"><div class="card-title">Outlook 2003</div></div>
+    <div class="card" onclick="openDesktop('ent2k1/index.html')"><img src="ent2k1.png" alt="Entourage 2001 Mac"><div class="card-title">Entourage 2001 Mac</div></div>
+    <div class="card" onclick="openDesktop('entx/index.html')"><img src="entx.png" alt="Entourage X Mac"><div class="card-title">Entourage X Mac</div></div>
+    <div class="card" onclick="openDesktop('ns3/index.html')"><img src="ns3.png" alt="Netscape 3"><div class="card-title">Netscape 3</div></div>
+    <div class="card" onclick="openDesktop('ns8/index.html')"><img src="ns8.png" alt="Netscape 8"><div class="card-title">Netscape 8</div></div>
+    <div class="card" onclick="openDesktop('eud5/index.html')"><img src="eud5.png" alt="Eudora 5"><div class="card-title">Eudora 5</div></div>
+    <div class="card" onclick="openDesktop('appm/index.html')"><img src="appm.png" alt="Apple Mail"><div class="card-title">Apple Mail (Mac OS X)</div></div>
+    <div class="card" onclick="openDesktop('appm2/index.html')"><img src="appm2.png" alt="Apple Mail 2"><div class="card-title">Apple Mail 2 (Mac OS X)</div></div>
+  </div>
+
+  <footer>
+    &copy; 2025 VirtualDesktop.org — All rights reserved.
+  </footer>
+</body>
+</html>
+
